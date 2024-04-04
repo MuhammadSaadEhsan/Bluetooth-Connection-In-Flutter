@@ -1,9 +1,8 @@
-import 'package:bluetooth/ble_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 import 'package:get/get.dart';
 
-
+import 'ble_controller.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -44,7 +43,7 @@ class Home extends StatelessWidget {
                               subtitle: Text(data.device.id.id),
                               trailing: Text(data.rssi.toString()),
                               onTap: () {
-                                controller.connectToDevice(data.device);
+                                controller.connectToDevice(data.device, context);
                               },
                             ),
                           );
